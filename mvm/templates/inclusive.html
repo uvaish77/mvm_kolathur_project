@@ -1,0 +1,406 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admission Inclusive</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+     <link rel="stylesheet" type="text/css" href="{% static 'aboutus.css' %}">
+    <script language="Javascript" src="{% static 'jquery.js' %}"></script>
+    <script type="text/JavaScript" src="{% static 'index.js' %}"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+<!--  header-->
+  <div>
+    <div class="parent">
+    <a href="{% url 'home-page' %}">
+       <div class="img">
+        <img src="{% static 'mvmlogo.png' %}" alt="" style="height:17rem;" />
+    </div>
+    </a>
+    </div>
+  </div>
+
+
+<!-- navbar-->
+
+ <div class="header" id="home" style="">
+
+		<div class="container ">
+			<div class="header-bottom">
+
+				<nav id="navigation" class="navigation navigation-landscape">
+					<div class="nav-header">
+
+						<!--<a class="nav-brand" href="#">
+							Navigation
+						</a>-->
+						<div class="nav-toggle"></div>
+					</div>
+					<div class="nav-menus-wrapper align-to-" style="">
+						<ul class="nav-menu">
+							<li><a href="{% url 'home-page' %}"><b>HOME</b></a></li>
+							<li><a href="{% url 'about-us' %}"><b>ABOUT US</b></a></li>
+                            <li class="active"><a href="#"><b>ADMISSION</b><span class="submenu-indicator"></span></a>
+								<ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
+									<li><a href="{% url 'admission-us' %}"><b>ADMISSION</b></a></li>
+                                     <li class=""><a href="#"><b>REGISTRATION</b><span class="submenu-indicator"></span></a>
+								<ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
+									<li><a href="{% url 'matric-us' %}"><b>MATRICULATION HIGHER SECONDARY SCHOOL</b></a></li>
+									<li class="active"><a href="{% url 'inclusive-us' %}"><b>INCLUSIVE SCHOOL FOR SPECIAL STUDENT</b></a></li>
+								</ul>
+							</li>
+									<li><a href="{% url 'fees-us' %}"><b>FEES DETAILS</b></a></li>
+
+								</ul>
+							</li>
+                              <li class=""><a href="#"><b>ACTIVITIES</b><span class="submenu-indicator"></span></a>
+								<ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
+									<li><a href="{% url 'osla-us' %}"><b>OSLA</b></a></li>
+									<li><a href="{% url 'special-us' %}"><b>SPECIAL ACTIVITIES</b></a></li>
+									<li><a href="{% url 'sports-us' %}"><b>SPORTS ACTIVITIES</b></a></li>
+								</ul>
+							</li>
+
+                             <li><a href="{% url 'gallery-us' %}"><b>GALLERY</b></a></li>
+                             <li><a href="{% url 'contact-us' %}"><b>CONTACT</b></a></li>
+
+
+
+						</ul>
+						<ul class="nav-menu nav-menu-social align-to-right">
+
+					</ul>
+					</div>
+				</nav>
+
+			</div>
+		</div>
+	</div>
+
+
+  <!--end of navbar-->
+
+                    <div class="message" align="center">
+                      {% for message in messages%}
+                        <h3> {{message}} </h3>
+                      {% endfor %}
+                  </div>
+
+
+
+
+
+
+<!-- ////////////////////////////////////////// -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 well">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title text-center">Application for Enquiry to
+                            <font color="blue"></font>
+                            <font color="red"></font>
+                            <font color="blue">Maharishi Vidya Mandir Inclusive School For Special Children</font> - 2022-2023</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" action="{% url 'inclusive-enquiry' %}" onsubmit="return myfun()" class="form-horizontal row">
+                            {%csrf_token%}
+                            <div class="form-group">
+                                <label for="applicant_name" class="control-label col-sm-3">Name of the Student :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="applicant_name" id="applicant_name" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="date_of_birth" class="control-label col-sm-3">Date of Birth :</label>
+                                <div class="col-sm-2">
+                                    <select name="date_day" id="date_of_birth" class="form-control">
+                                                <option selected disabled value="">Day</option>
+                                                <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+                                            </select>
+                                    <span class="help-inline"></span>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select name="date_month" class="form-control">
+                                                <option selected disabled value="">Month</option>
+                                                <option value="01">01 - January</option>
+                                                <option value="02">02 - February</option>
+                                                <option value="03">03 - March</option>
+                                                <option value="04">04 - April</option>
+                                                <option value="05">05 - May</option>
+                                                <option value="06">06 - June</option>
+                                                <option value="07">07 - July</option>
+                                                <option value="08">08 - August</option>
+                                                <option value="09">09 - September</option>
+                                                <option value="10">10 - October</option>
+                                                <option value="11">11 - November</option>
+                                                <option value="12">12 - December</option>
+                                            </select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select name="date_year" class="form-control">
+                                                <option  disabled selected value="">Year</option>
+                                                <option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option>
+                                            </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="mobile">Mobile :</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"></span>
+                                        <input type="number" class="form-control" id="mobile" maxlength="10" name="mobilematric">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender" class="control-label col-sm-3">Gender :</label>
+                                <div class="col-sm-2">
+                                    <select name="gender" id="gender" class="form-control">
+                                                <option value="" selected disabled>Select</option>
+                                                <option value="MALE">MALE</option>
+                                                <option value="FEMALE">FEMALE</option>
+                                            </select>
+                                </div>
+                                <label for="religion" class="control-label col-sm-2">Religion :</label>
+                                <div class="col-sm-3">
+                                    <select name="religion" id="religion" class="form-control">
+                                                        <option value="" disabled selected>Select</option>
+                                                        <option value="ISLAM">ISLAM</option>
+                                                        <option value="HINDUISM">HINDUISM</option>
+                                                        <option value="CHRISTIANITY">CHRISTIANITY</option>
+                                                        <option value="BUDDHISM">BUDDHISM</option>
+                                                        <option value="OTHER">OTHER</option>
+                                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="std" class="control-label col-sm-3">List of STD :</label>
+                                <div class="col-sm-2">
+                                    <select name="std" id="std" class="form-control">
+                                                        <option value="">Select</option>
+                                                        <option value="PRE-KG">PRE-KG</option>
+                                                        <option value="LKG">LKG</option>
+                                                        <option value="UKG">UKG</option>
+                                                        <option value="I">I</option>
+                                                        <option value="II">II</option>
+                                                        <option value="III">III</option>
+                                                        <option value="IV">IV</option>
+                                                        <option value="V">V</option>
+                                                        <option value="VI">VI</option>
+                                                        <option value="VII">VII</option>
+                                                        <option value="VIII">VIII</option>
+                                                        <option value="IX">IX</option>
+                                                        <option value="XI">XI</option>
+                                                </select>
+                                </div>
+                                <label for="nationality" class="control-label col-sm-2">Nationality :</label>
+                                <div class="col-sm-3">
+                                    <select name="nationality" id="nationality" class="form-control">
+                                                            <option value="">Select</option>
+                                                            <option value="INDIAN" selected>INDIAN</option>
+                                                        </select>
+                                </div>
+                            </div>
+
+
+
+                                      <div class="form-group">
+                                <label for="father_name" class="control-label col-sm-3">Father's Name :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="father_name" id="father_name" class="form-control">
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label for="father_occupation" class="control-label col-sm-3">Father's Occupation :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="father_occupation" id="father_occupation" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="mother_name" class="control-label col-sm-3">Mother's Name :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="mother_name" id="mother_name" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="mother_occupation" class="control-label col-sm-3">Mother's Occupation :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="mother_occupation" id="mother_occupation" class="form-control">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <label for="annual_income" class="control-label col-sm-3">Annual Income :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="annual_income" id="annual_income" class="form-control">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <label for="community" class="control-label col-sm-3">Community :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="community" id="community" class="form-control">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <label for="last_school" class="control-label col-sm-3">Name of the School Last Studied :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="last_school" id="last_school" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="email" class="control-label col-sm-3">Email :</label>
+                                <div class="col-sm-6">
+                                    <input type="email" name="email" id="email" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="present_address" class="control-label col-sm-3">Present Address :</label>
+                                <div class="col-sm-7">
+                                    <textarea name="present_address" rows="3" id="present_address" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="permanent_address" class="control-label col-sm-3">Permanent Address :</label>
+                                <div class="col-sm-7">
+                                    <textarea name="permanent_address" id="permanent_address" rows="3" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <hr>
+
+
+                        <div class="row">
+                            <div class="col-lg-2 col-lg-offset-5">
+                                <a href="{% url 'inclusive-enquiry' %}"><input type="submit" class="btn btn-success btn-lg btn-block" value="Submit"></a>
+
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+<br>
+ <br>
+
+
+  <!-- Start footer -->
+  <footer id="mu-footer">
+    <!-- start footer top -->
+    <div class="mu-footer-top">
+      <div class="container">
+        <div class="mu-footer-top-area">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="mu-footer-widget">
+                <h4>INFORMATION</h4>
+                        <ul>
+                           <li class=""><a href="{% url 'home-page' %}"><b>HOME</b></a></li>
+							<li><a href="{% url 'about-us' %}"><b>ABOUT US</b></a></li>
+                            <li class=""><a href="{% url 'admission-us' %}"><b>ADMISSION</b><span class="submenu-indicator"></span></a>
+                             <li><a href="{% url 'gallery-us' %}"><b>GALLERY</b></a></li>
+                             <li><a href="{% url 'contact-us' %}"><b>CONTACT</b></a></li>
+
+                         </ul>
+                   </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="mu-footer-widget">
+                <h4>CONTACT US</h4>
+                <p>
+                  <h4><a href="tel:97898112799566095664" class="tel-link"><b>Mobile :</b> 9789811279 &amp; 9566095664</a></h4>
+                    <h4><a href="tel:044-40063970" class="tel-link"><b>Landline :</b> 044-40063970</a></h4>
+                    <h4><a href="mailto:maharishimhsskolathur@gmail.com" class="email-link"><b>Email:</b><br><br>maharishimhsskolathur@gmail.com <br><br>supportmvmkolathur@gmail.com</a></h4>
+                </p>
+              </div>
+            </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="mu-footer-widget">
+
+
+              </div>
+            </div>
+
+            <div class="f-adds col-lg-3 col-md-3 col-sm-3">
+              <div class="mu-footer-widget">
+                <h4>ADDRESS</h4>
+                  <p>No 15. 200 Feet Inner Ring Road</p>
+                  <p>Jawaharlal Nehru Salai</p>
+                  <p>Kolathur</p>
+                  <p>Chennai - 600099</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end footer top -->
+    <!-- start footer bottom -->
+    <div class="mu-footer-bottom">
+      <div class="container">
+        <div class="mu-footer-bottom-area">
+          <p>&copy; All Right Reserved. Designed by MVM </p>
+        </div>
+      </div>
+    </div>
+    <!-- end footer bottom -->
+  </footer>
+
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

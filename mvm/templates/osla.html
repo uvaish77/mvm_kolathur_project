@@ -1,0 +1,185 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Osla</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <script language="Javascript" src="{% static 'jquery.js' %}"></script>
+    <script type="text/JavaScript" src="{% static 'index.js' %}"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+<!--  header-->
+  <div>
+    <div class="parent">
+    <a href="{% url 'home-page' %}">
+       <div class="img">
+        <img src="{% static 'mvmlogo.png' %}" alt="" style="height:17rem;" />
+    </div>
+    </a>
+    </div>
+  </div>
+
+
+
+<!-- navbar-->
+
+
+    <div class="header" id="home" style="">
+
+		<div class="container ">
+			<div class="header-bottom">
+
+				<nav id="navigation" class="navigation navigation-landscape">
+					<div class="nav-header">
+
+						<!--<a class="nav-brand" href="#">
+							Navigation
+						</a>-->
+						<div class="nav-toggle"></div>
+					</div>
+					<div class="nav-menus-wrapper align-to-" style="">
+						<ul class="nav-menu">
+							<li><a href="{% url 'home-page' %}"><b>HOME</b></a></li>
+							<li><a href="{% url 'about-us' %}"><b>ABOUT US</b></a></li>
+                            <li class=""><a href="#"><b>ADMISSION</b><span class="submenu-indicator"></span></a>
+								<ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
+									<li><a href="{% url 'admission-us' %}"><b>ADMISSION</b></a></li>
+                                     <li class=""><a href="#"><b>REGISTRATION</b><span class="submenu-indicator"></span></a>
+								<ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
+									<li><a href="{% url 'matric-us' %}"><b>MATRICULATION HIGHER SECONDARY SCHOOL</b></a></li>
+									<li><a href="{% url 'inclusive-us' %}"><b>INCLUSIVE SCHOOL FOR SPECIAL STUDENT</b></a></li>
+								</ul>
+							</li>
+									<li><a href="{% url 'fees-us' %}"><b>FEES DETAILS</b></a></li>
+
+								</ul>
+							</li>
+                              <li class="active"><a href="#"><b>ACTIVITIES</b><span class="submenu-indicator"></span></a>
+								<ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
+									<li class="active"><a href="{% url 'osla-us' %}"><b>OSLA</b></a></li>
+									<li><a href="{% url 'special-us' %}"><b>SPECIAL ACTIVITIES</b></a></li>
+									<li><a href="{% url 'sports-us' %}"><b>SPORTS ACTIVITIES</b></a></li>
+								</ul>
+							</li>
+
+                             <li><a href="{% url 'gallery-us' %}"><b>GALLERY</b></a></li>
+                             <li><a href="{% url 'contact-us' %}"><b>CONTACT</b></a></li>
+
+
+
+						</ul>
+						<ul class="nav-menu nav-menu-social align-to-right">
+
+					</ul>
+					</div>
+				</nav>
+
+			</div>
+		</div>
+	</div>
+
+
+
+  <!--end of navbar-->
+
+  <div class="osla-cont">
+      <h1 class="all-head">Only Success Leadership Academy Programme</h1>
+      <br>
+     <li>Only Success strive in “Making People Powerful”, and help people realize and understand the true potential in them. Only Success help people in achieving exceptional results in likfe and Design their destiny.</li>
+      <li>Only Success Leadership Academy (OSLO) is exclusively programmed to implant and improve the leadership qualities among students. It also aims at determining the development aspects of human life and identifying and improving the right resources and capabilities of an individual.</li>
+      <li>The training curriculum of Only Success is based on various technical concepts such as Whole Brain, and NLP and so on for the schools and helps pupil achieve excellence in all areas of life.</li>
+  </div>
+
+
+
+
+
+<br>
+ <br>
+
+
+  <!-- Start footer -->
+  <footer id="mu-footer">
+    <!-- start footer top -->
+    <div class="mu-footer-top">
+      <div class="container">
+        <div class="mu-footer-top-area">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="mu-footer-widget">
+                <h4>INFORMATION</h4>
+                        <ul>
+                           <li class=""><a href="{% url 'home-page' %}"><b>HOME</b></a></li>
+							<li><a href="{% url 'about-us' %}"><b>ABOUT US</b></a></li>
+                            <li class=""><a href="{% url 'admission-us' %}"><b>ADMISSION</b><span class="submenu-indicator"></span></a>
+                             <li><a href="{% url 'gallery-us' %}"><b>GALLERY</b></a></li>
+                             <li><a href="{% url 'contact-us' %}"><b>CONTACT</b></a></li>
+
+                         </ul>
+                   </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="mu-footer-widget">
+                <h4>CONTACT US</h4>
+                <p>
+                  <h4><a href="tel:97898112799566095664" class="tel-link"><b>Mobile :</b> 9789811279 &amp; 9566095664</a></h4>
+                    <h4><a href="tel:044-40063970" class="tel-link"><b>Landline :</b> 044-40063970</a></h4>
+                    <h4><a href="mailto:maharishimhsskolathur@gmail.com" class="email-link"><b>Email:</b><br><br>maharishimhsskolathur@gmail.com <br><br>supportmvmkolathur@gmail.com</a></h4>
+                </p>
+              </div>
+            </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="mu-footer-widget">
+
+
+              </div>
+            </div>
+
+            <div class="f-adds col-lg-3 col-md-3 col-sm-3">
+              <div class="mu-footer-widget">
+                <h4>ADDRESS</h4>
+                  <p>No 15. 200 Feet Inner Ring Road</p>
+                  <p>Jawaharlal Nehru Salai</p>
+                  <p>Kolathur</p>
+                  <p>Chennai - 600099</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end footer top -->
+    <!-- start footer bottom -->
+    <div class="mu-footer-bottom">
+      <div class="container">
+        <div class="mu-footer-bottom-area">
+          <p>&copy; All Right Reserved. Designed by MVM </p>
+        </div>
+      </div>
+    </div>
+    <!-- end footer bottom -->
+  </footer>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
